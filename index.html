@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/nav-desktop.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,6 +13,27 @@
   <title>Evento Tech</title>
 </head>
 <body>
+  <nav>
+    <input type="checkbox" id="theme-mode" class="mode" hidden="" />
+    <div class="nav-desktop">
+      <div class="wrap">
+        <input checked="" type="radio" id="rd-1" name="radio" class="rd-1" hidden="" />
+        <label for="rd-1" class="label" style="--index: 0;" onclick="scrollToSection('Início')"><span>Início</span></label>
+
+        <input type="radio" id="rd-2" name="radio" class="rd-2" hidden="" />
+        <label for="rd-2" class="label" style="--index: 1;" onclick="scrollToSection('Sobre')"><span>Sobre</span></label>
+
+        <input type="radio" id="rd-3" name="radio" class="rd-3" hidden="" />
+        <label for="rd-3" class="label" style="--index: 2;" onclick="scrollToSection('QuemVai')"><span>Quem vai</span></label>
+
+        <input type="radio" id="rd-4" name="radio" class="rd-4" hidden="" />
+        <label for="rd-4" class="label" style="--index: 3;" onclick="scrollToSection('FAQ')"><span>FAQ</span></label>
+
+        <div class="bar"></div>
+        <div class="slidebar"></div>
+      </div>
+    </div>
+  </nav>
   
 </body>
 </html>
