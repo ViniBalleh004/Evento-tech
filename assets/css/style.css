@@ -6,6 +6,6 @@
 }
 
 body {
-	background: url("/assets/images/bg.jpg") no-repeat center / cover;
+	background: url("../images/bg.jpg") no-repeat center / cover;
 	min-height: 100vh;
 }
