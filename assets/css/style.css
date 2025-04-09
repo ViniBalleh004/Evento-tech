@@ -6,6 +6,6 @@
 }
 
 body {
-	background: url("https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/bg.jpg") no-repeat center/cover;
+	background: url("/assets/images/bg.jpg") no-repeat center/cover;
 	min-height: 100vh;
 }
