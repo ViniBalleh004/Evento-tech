@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/nav-desktop.css">
+  <link rel="stylesheet" href="../assets/css/nav-mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -43,6 +44,22 @@
         <div class="slidebar"></div>
       </div>
     </div>
+
+    <label class="nav-mobile">
+      <a href="/inscricao.html" class="subscribe">Inscreva-se</a>
+      <input type="checkbox" checked="" class="inp" />
+      <div class="bar">
+        <span class="top bar-list"></span>
+        <span class="middle bar-list"></span>
+        <span class="bottom bar-list"></span>
+      </div>
+      <section class="menu-container">
+        <div class="menu-list" onclick="scrollToSection('Início')">Início</div>
+        <div class="menu-list" onclick="scrollToSection('Sobre')">Sobre</div>
+        <div class="menu-list" onclick="scrollToSection('QuemVai')">Quem vai</div>
+        <div class="menu-list" onclick="scrollToSection('FAQ')">FAQ</div>
+      </section>
+    </label>
   </nav>
   <script src="/src/nav-bar.js"></script>
 </body>
