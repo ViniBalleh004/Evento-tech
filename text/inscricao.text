@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/nav-desktop.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Inscreva-se - Evento Tech</title>
+</head>
+<body>
+  <!-- Navegação -->
+
+  <!-- Conteúdo Principal -->
+  <main class="inscricao-container">
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h1>Evento Tech 2025 - Inscreva-se!</h1>
+        <a href="#" class="btn" onclick="openModal()">Inscreva-se Agora</a>
+      </div>
+    </section>
+    <!-- Cronograma -->
+    <section class="schedule-section">
+      <h2>Cronograma</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <h3>Dia 1: Inovação em Startups Tecnológicas</h3>
+          <p>Descubra como startups estão revolucionando o mercado de tecnologia financeira.</p>
+          <p><strong>Palestrante:</strong> Dileep Thazhmon</p>
+          <p><strong>Data e Hora:</strong> 27 de abril de 2025, 10:00 - 11:30</p>
+        </div>
+        <div class="schedule-item">
+          <h3>Dia 2: Desenvolvimento de Software e Ética</h3>
+          <p>Explore os desafios éticos no desenvolvimento de software em escala global.</p>
+          <p><strong>Palestrante:</strong> Shelley McKinley</p>
+          <p><strong>Data e Hora:</strong> 28 de abril de 2025, 14:00 - 15:30</p>
+        </div>
+        <div class="schedule-item">
+          <h3>Dia 3: O Futuro da Tecnologia Espacial</h3>
+          <p>Conheça as inovações que estão moldando a exploração espacial e seu impacto na tecnologia.</p>
+          <p><strong>Palestrante:</strong> Sara Sabry</p>
+          <p><strong>Data e Hora:</strong> 29 de abril de 2025, 09:00 - 10:30</p>
+        </div>
+        <div class="schedule-item">
+          <h3>Dia 4: Painel de Inteligência Artificial</h3>
+          <p>Um painel com especialistas discutindo o futuro da IA no desenvolvimento de software.</p>
+          <p><strong>Palestrante:</strong> Equipe Web Summit Rio</p>
+          <p><strong>Data e Hora:</strong> 30 de abril de 2025, 11:00 - 12:30</p>
+        </div>
+        <a href="/index.html" class="btn btn-back">Voltar para Início</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="inscricao-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()" aria-label="Fechar modal">×</span>
+      <h2>Inscrição</h2>
+      <form id="inscricao-form">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label>Possui graduação completa?</label>
+        <div class="radio-group">
+          <input type="radio" id="grad-sim" name="graduacao" value="sim" required>
+          <label for="grad-sim">Sim</label>
+          <input type="radio" id="grad-nao" name="graduacao" value="nao">
+          <label for="grad-nao">Não</label>
+        </div>
+        
+        <label for="nivel">Nível de conhecimento em programação:</label>
+        <select id="nivel" name="nivel" required>
+          <option value="menos-2-anos">Atuo na área há menos de 2 anos</option>
+          <option value="mais-2-anos">Atuo na área há mais de 2 anos</option>
+        </select>
+        
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+      <p><em>Nota: Após enviar sua inscrição, você será redirecionado para o site oficial do Web Summit Rio para completar o processo de compra de ingressos.</em></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/src/main.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f4e78ca836c948',t:'MTc0NDQ4Mzc3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
