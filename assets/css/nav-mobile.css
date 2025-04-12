@@ -42,6 +42,7 @@
 		right: 1rem;
 		cursor: pointer;
 		justify-content: space-between;
+		z-index: 9999; /* Garante que a navbar fique acima de tudo */
 	}
 
 	.arrow {

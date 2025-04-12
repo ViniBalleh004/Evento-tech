@@ -16,6 +16,8 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		z-index: 9999; /* Garante que a navbar fique acima de tudo */
+		position: relative; /* Necessário para o z-index funcionar */
 	}
 
 	.nav-desktop .theme {
