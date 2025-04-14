@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/nav-desktop.css">
-  <link rel="stylesheet" href="../assets/css/nav-mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -13,54 +12,18 @@
 </head>
 <body>
   <!-- Navegação -->
-  <nav>
-    <input type="checkbox" id="theme-mode" class="mode" hidden="" />
-    <div class="nav-desktop">
-      <div class="wrap">
-        <input checked="" type="radio" id="rd-Início" name="radio" class="rd-1" hidden="" />
-        <label for="rd-Início" class="label" style="--index: 0;" onclick="scrollToSection('Início')">
-          <span>Início</span>
-        </label>
-        <input type="radio" id="rd-Sobre" name="radio" class="rd-2" hidden="" />
-        <label for="rd-Sobre" class="label" style="--index: 1;" onclick="scrollToSection('Sobre')">
-          <span>Sobre</span>
-        </label>
-        <input type="radio" id="rd-QuemVai" name="radio" class="rd-3" hidden="" />
-        <label for="rd-QuemVai" class="label" style="--index: 2;" onclick="scrollToSection('QuemVai')">
-          <span>Quem vai</span>
-        </label>
-        <input type="radio" id="rd-FAQ" name="radio" class="rd-4" hidden="" />
-        <label for="rd-FAQ" class="label" style="--index: 3;" onclick="scrollToSection('FAQ')">
-          <span>FAQ</span>
-        </label>
-        <div class="bar"></div>
-        <div class="slidebar"></div>
-      </div>
-    </div>
-    <label class="nav-mobile">
-      <a href="/inscricao.html" class="subscribe">Inscreva-se</a>
-      <input type="checkbox" checked="" class="inp" />
-      <div class="bar">
-        <span class="top bar-list"></span>
-        <span class="middle bar-list"></span>
-        <span class="bottom bar-list"></span>
-      </div>
-      <section class="menu-container">
-        <div class="menu-list" onclick="scrollToSection('Início')">Início</div>
-        <div class="menu-list" onclick="scrollToSection('Sobre')">Sobre</div>
-        <div class="menu-list" onclick="scrollToSection('QuemVai')">Quem vai</div>
-        <div class="menu-list" onclick="scrollToSection('FAQ')">FAQ</div>
-      </section>
-    </label>
-  </nav>
 
   <!-- Conteúdo Principal -->
   <main class="inscricao-container">
-    <!-- Lado Esquerdo: Banner e Cronograma -->
-    <section class="left-side">
-      <div class="banner">
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
         <h1>Evento Tech 2025 - Inscreva-se!</h1>
+        <a href="#" class="btn" onclick="openModal()">Inscreva-se Agora</a>
       </div>
+    </section>
+    <!-- Cronograma -->
+    <section class="schedule-section">
       <h2>Cronograma</h2>
       <div class="schedule">
         <div class="schedule-item">
@@ -87,15 +50,16 @@
           <p><strong>Palestrante:</strong> Equipe Web Summit Rio</p>
           <p><strong>Data e Hora:</strong> 30 de abril de 2025, 11:00 - 12:30</p>
         </div>
+        <a href="/index.html" class="btn btn-back">Voltar para Início</a>
       </div>
     </section>
+  </main>
 
-    <!-- Lado Direito: Formulário de Inscrição -->
-    <section class="right-side">
-      <div class="header-inscricao">
-        <a href="/index.html" class="btn-back">← Voltar</a>
-        <h2>Inscrição</h2>
-      </div>
+  <!-- Modal -->
+  <div id="inscricao-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()" aria-label="Fechar modal">×</span>
+      <h2>Inscrição</h2>
       <form id="inscricao-form">
         <label for="nome">Nome Completo:</label>
         <input type="text" id="nome" name="nome" required>
@@ -123,11 +87,11 @@
         <button type="submit">Enviar Inscrição</button>
       </form>
       <p><em>Nota: Após enviar sua inscrição, você será redirecionado para o site oficial do Web Summit Rio para completar o processo de compra de ingressos.</em></p>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <!-- Scripts -->
-  <script src="/src/nav-bar.js"></script>
   <script src="/src/main.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92f4e78ca836c948',t:'MTc0NDQ4Mzc3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
