@@ -1,32 +1,66 @@
+// Flag para indicar se o scroll suave está em andamento
+let isScrolling = false;
+
+// Função para scroll suave até uma seção
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
-    // Ajuste para ficar antes do meio e antes do topo, para não ficar por baixo da navbar
-    const offsetTop = section.offsetTop - 80;
+    isScrolling = true; // Ativa a flag
+    const offsetTop = section.offsetTop - 80; // Ajuste para navbar
     window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+
+    // Atualiza o rádio correspondente imediatamente
+    const radio = document.getElementById(`rd-${sectionId}`);
+    if (radio) {
+      radio.checked = true;
+    }
+
+    // Desativa a flag após o scroll terminar (estimativa de 500ms)
+    setTimeout(() => {
+      isScrolling = false;
+    }, 500);
   }
 }
 
+// Função para debounce
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Função para atualizar a seção ativa
 function updateActiveSection() {
+  // Evita atualizar durante o scroll suave
+  if (isScrolling) return;
+
   const sections = document.querySelectorAll("main > section");
   const radios = document.querySelectorAll(".wrap input[type='radio']");
-
   let activeSectionId = null;
 
-  for (const section of sections) {
+  // Encontra a seção mais próxima do centro da janela
+  sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+    const windowHeight = window.innerHeight;
+    // Verifica se a seção está no centro da janela
+    if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
       activeSectionId = section.id;
     }
-  }
+  });
 
+  // Atualiza o rádio apenas se uma seção válida for encontrada
   if (activeSectionId) {
-    for (const radio of radios) {
-      if (radio.id === `rd-${activeSectionId}`) {
-        radio.checked = true;
-      }
-    }
+    radios.forEach((radio) => {
+      radio.checked = radio.id === `rd-${activeSectionId}`;
+    });
   }
 }
 
-window.addEventListener("scroll", updateActiveSection);
+// Adiciona o evento de scroll com debounce
+window.addEventListener("scroll", debounce(updateActiveSection, 100));
