@@ -186,17 +186,18 @@ iframe {
 	padding: 0.5rem 0;
 }
 
-.faq-item h3 .toggle {
-	font-size: 1.5rem;
+.toggle-icon {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: linear-gradient(135deg, #6f9de2, #4a7bc1);
+	mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat center;
+	-webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat center;
 	transition: transform 0.3s ease;
 }
 
-.faq-item.active .toggle {
-	transform: rotate(45deg);
-}
-
-.faq-item.active .toggle::before {
-	content: "-";
+.faq-item.active .toggle-icon {
+	transform: rotate(180deg);
 }
 
 .answer {
